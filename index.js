@@ -176,36 +176,36 @@ function buildCards(teamArr){
     const cards = teamArr.map(member=>{
 
         let special;
-        let specialDesc;
-        let specialTag;
-        let specialSymbol;
-        let specialLink = ''
-        let specialStyle = ''
-        let specialTarget = ''
+        let desc;
+        let tag;
+        let symbol;
+        let link = ''
+        let style = ''
+        let target = ''
 
         switch(member.getRole()){
             case "Manager": {
-                special = member.officeNumber
-                specialTag = "li"
-                specialDesc = "Office #:"
-                specialSymbol = `<i class="fa-solid fa-mug-hot"></i>`
+                special = member.officeNum
+                tag = "li"
+                desc = "Office #:"
+                symbol = `<i class="fa-solid fa-mug-hot"></i>`
                 break
             }
             case "Engineer": {
                 special = member.getGithub()
-                specialTag = "a"
-                specialDesc = `<i class="fa-brands fa-github"></i>`
-                specialLink = `https://github.com/${special}`
-                specialStyle = 'link-primary'
-                specialTarget = '_blank'
-                specialSymbol = `<i class="fa-solid fa-gear"></i>`
+                tag = "a"
+                desc = `<i class="fa-brands fa-github"></i>`
+                link = `https://github.com/${special}`
+                style = 'link-primary'
+                target = '_blank'
+                symbol = `<i class="fa-solid fa-gear"></i>`
                 break
             }
             case "Intern" : {
                 special = member.getSchool()
-                specialTag = "li"
-                specialDesc = `<i class="fa-solid fa-school"></i>`
-                specialSymbol = `<i class="fa-sharp fa-solid fa-graduation-cap"></i>`
+                tag = "li"
+                desc = `<i class="fa-solid fa-school"></i>`
+                symbol = `<i class="fa-sharp fa-solid fa-graduation-cap"></i>`
                 break
             }
             default: break
@@ -215,11 +215,11 @@ function buildCards(teamArr){
                 <div class="card m-4" style="width: 15rem; opacity: 90%;  box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.581); word-break: break-all">
                     <div class="card-body">
                         <h5 class="card-title">${member.getName()}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${specialSymbol} ${member.getRole()}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">${symbol} ${member.getRole()}</h6>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">ID: ${member.getId()}</li>
                             <a href="mailto:${member.getEmail()}"  class="list-group-item"><i class="fa fa-envelope""></i> <span class="link-primary">${member.getEmail()}</span></a>
-                            <${specialTag} href="${specialLink}" target="${specialTarget}" class="list-group-item">${specialDesc} <span class=${specialStyle}>${special}</span></${specialTag}>
+                            <${tag} href="${link}" target="${target}" class="list-group-item">${desc} <span class=${style}>${special}</span></${tag}>
                         </ul>
                     </div>
                 </div>`
