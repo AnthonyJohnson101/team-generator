@@ -3,7 +3,8 @@
 
   ## Description 
   A node cli application for generating employee cards to an html file.
-  
+  ![image](https://user-images.githubusercontent.com/116526152/234118898-c0a67c54-320f-465a-9d63-9806fa9881a4.png)
+
   Demo: https://drive.google.com/file/d/17TUgRicy-HviGH9p5eAzvhhqnPzNP1Vx/view
 
   ## Table of Contents
